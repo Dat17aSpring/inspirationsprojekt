@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Update Course</title>
+    <link rel="stylesheet" type="text/css"
+          href="../../../static/css/styles.css"
+          th:href="@{/css/styles.css}"/>
+</head>
+<body>
+<div th:replace="fragments/header :: header">...</div>
+<div class="container">
+    <h1>Update Course</h1>
+
+    <form th:action="@{/courses/update}" th:object="${course}" method="post">
+        <input type="hidden" th:field="${course.courseId}"/>
+        <p>Title: <input type="text" th:field="*{title}"/></p>
+        <p>Start date: <input type="date" th:field="*{startDate}"/></p>
+        <p>etcs: <input type="text" th:field="*{etcs}"/></p>
+        <input type="submit" value="Create" class="btn btn-create"/>
+    </form>
+</div>
+</body>
+</html>
